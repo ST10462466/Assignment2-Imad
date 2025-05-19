@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_orange"
+    android:backgroundTint="#2196F3"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:textColor="@color/text_dark_blue">
+
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Welcome to your App!\nTest your knowledge and learn more about history"
+        android:textColor="#FAFBFB"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#8BC34A"
+        android:text="Start" />
+
+</LinearLayout>

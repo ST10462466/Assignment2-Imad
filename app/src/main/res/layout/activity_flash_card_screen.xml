@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    android:backgroundTint="#2196F3"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/quizBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Sample Question"
+        android:textColor="#FAFBFB"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/trueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#8BC34A"
+        android:text="True"
+        android:textColor="#FAFBFB" />
+
+    <Button
+        android:id="@+id/falseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#8BC34A"
+        android:text="False"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#8BC34A"
+        android:enabled="false"
+        android:text="Next"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

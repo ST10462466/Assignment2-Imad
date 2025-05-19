@@ -1,0 +1,11 @@
+<resources>
+    <!-- Background and text -->
+    <color name="background_orange">#FFA500</color> <!-- orange -->
+    <color name="text_dark_blue">#003366</color>    <!-- dark blue -->
+    <color name="button_blue">#007BFF</color>        <!-- a medium blue -->
+
+    <!-- Optional: override existing primary colors if needed -->
+    <color name="colorPrimary">#007BFF</color>
+    <color name="colorPrimaryDark">#0056b3</color>
+    <color name="colorAccent">#007BFF</color>
+</resources>
