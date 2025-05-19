@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ReviewActivity : AppCompatActivity() {
 
+    // declaring again the array of questions and its corresponding answers but this time it's for a review after giving
+    //the feedback to the usr so that he can improve
     private val questions = arrayOf(
         "The Great Wall of China is visible from space.",
         "The Renaissance began in the 14th century.",

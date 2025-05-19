@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class FlashCardScreen : AppCompatActivity() {
 
+    // declaring and initializing my array containing my questions
     private val quiz = arrayOf(
         "The Great Wall of China is visible from space.",
         "The Renaissance began in the 14th century.",
@@ -17,13 +18,16 @@ class FlashCardScreen : AppCompatActivity() {
         "The Titanic sank in 1912."
     )
 
+    // declaring and initializing my array containing the corresponding answers to the questions
     private val answers = arrayOf(false, true, false, true, true)
 
+    // declaring all my elements
     private lateinit var questionBox: TextView
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
     private lateinit var nextButton: Button
 
+    // initializing the score counter to 0 as well as the index
     private var score = 0
     private var currentIndex = 0
     private var answered = false
@@ -32,13 +36,13 @@ class FlashCardScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flash_card_screen)
 
-        // Link UI elements
+        // Linking UI elements to the code
         questionBox = findViewById(R.id.quizBox)
         trueButton = findViewById(R.id.trueButton)
         falseButton = findViewById(R.id.falseButton)
         nextButton = findViewById(R.id.nextButton)
 
-        // Start "loop" through questions manually
+        // Integration of an if statement through the questions
         displayQuestion()
 
         trueButton.setOnClickListener {
@@ -50,14 +54,15 @@ class FlashCardScreen : AppCompatActivity() {
         }
 
         nextButton.setOnClickListener {
-            // Move to next question (simulate next step in loop)
+
+            // Moving to the next question while increasing the index
             currentIndex++
 
             if (currentIndex < quiz.size) {
                 displayQuestion()
                 resetButtons()
             } else {
-                // Loop ended: Go to final screen
+                // The end of the If statement and moving to the final screen
                 val intent = Intent(this, ScoreScreen::class.java)
                 intent.putExtra("score", score)
                 intent.putExtra("total", quiz.size)
@@ -89,6 +94,7 @@ class FlashCardScreen : AppCompatActivity() {
         nextButton.isEnabled = true
     }
 
+    //Integrating a rest Button which allows the user to restart  the quiz
     private fun resetButtons() {
         answered = false
         trueButton.isEnabled = true
