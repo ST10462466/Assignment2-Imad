@@ -10,8 +10,8 @@ class ReviewActivity : AppCompatActivity() {
     //the feedback to the usr so that he can improve
     private val questions = arrayOf(
         "The Great Wall of China is visible from space.",
-        "The Renaissance began in the 14th century.",
-        "Julius Caesar was a Roman emperor.",
+        "Kotlin was developed by JetBrains.",
+        "Microsoft was founded before Apple.",
         "The first Olympic Games were held in Greece.",
         "The Titanic sank in 1912."
     )
@@ -39,3 +39,5 @@ class ReviewActivity : AppCompatActivity() {
         reviewText.text = builder.toString()
     }
 }
+// OpenAI (2025) ChatGPT (May 2025 version).
+// Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025).

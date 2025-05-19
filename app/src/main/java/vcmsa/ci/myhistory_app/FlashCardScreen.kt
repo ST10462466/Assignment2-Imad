@@ -12,11 +12,13 @@ class FlashCardScreen : AppCompatActivity() {
     // declaring and initializing my array containing my questions
     private val quiz = arrayOf(
         "The Great Wall of China is visible from space.",
-        "The Renaissance began in the 14th century.",
-        "Julius Caesar was a Roman emperor.",
+        "Kotlin was developed by JetBrains.",
+        "Microsoft was founded before Apple.",
         "The first Olympic Games were held in Greece.",
         "The Titanic sank in 1912."
     )
+    // Author : Zahra Bulbulia
+    // url : https://www.youtube.com/watch?v=LeLwyl2WQgY
 
     // declaring and initializing my array containing the corresponding answers to the questions
     private val answers = arrayOf(false, true, false, true, true)
@@ -26,11 +28,17 @@ class FlashCardScreen : AppCompatActivity() {
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
     private lateinit var nextButton: Button
+    // OpenAI (2025) ChatGPT (May 2025 version).
+    // Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025).
 
     // initializing the score counter to 0 as well as the index
     private var score = 0
     private var currentIndex = 0
+    // Author : Zahra Bulbulia
+    // url : https://www.youtube.com/watch?v=LeLwyl2WQgY
     private var answered = false
+    // OpenAI (2025) ChatGPT (May 2025 version).
+    // Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +79,8 @@ class FlashCardScreen : AppCompatActivity() {
             }
         }
     }
+    // OpenAI (2025) ChatGPT (May 2025 version).
+    // Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025).
 
     private fun displayQuestion() {
         questionBox.text = "Q${currentIndex + 1}: ${quiz[currentIndex]}"
@@ -102,3 +112,5 @@ class FlashCardScreen : AppCompatActivity() {
         nextButton.isEnabled = false
     }
 }
+// OpenAI (2025) ChatGPT (May 2025 version).
+// Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025).
