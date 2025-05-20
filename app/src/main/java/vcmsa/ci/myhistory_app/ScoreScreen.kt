@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+
 
 class ScoreScreen : AppCompatActivity() {
 
@@ -31,18 +33,20 @@ class ScoreScreen : AppCompatActivity() {
         val score = intent.getIntExtra("score", 0)
         val total = intent.getIntExtra("total", 5)
 
-        val scoreText = findViewById<TextView>(R.id.scoreBox)
-        val feedbackText = findViewById<TextView>(R.id.feedbackBox)
+        val scoreBox = findViewById<TextView>(R.id.scoreBox)
+        val feedbackBox = findViewById<TextView>(R.id.feedbackBox)
         val reviewButton = findViewById<Button>(R.id.reviewButton)
 
-        scoreText.text = "Your score: $score / $total"
+        scoreBox.text = "Your score: $score"
 
-        feedbackText.text = if (score >= 3) "Great job !!" else "Keep practicing"
+        feedbackBox.text = if (score >= 3) "Great job !!" else "Keep practicing"
 
         reviewButton.setOnClickListener {
-            val intent = Intent(this, ReviewActivity::class.java)
+            Log.d("ScoreScreen", "reviewButton clicked")
+            val intent = Intent(this, ReviewScreen::class.java) // Corrected!
             startActivity(intent)
         }
+
     }
 }
 // OpenAI (2025) ChatGPT (May 2025 version).

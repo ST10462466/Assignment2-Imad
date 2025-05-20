@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
+
 
 class FlashCardScreen : AppCompatActivity() {
 
@@ -43,6 +45,7 @@ class FlashCardScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flash_card_screen)
+        Log.d("FlashCardScreen", "Activity Created for my second screen")
 
         // Linking UI elements to the code
         questionBox = findViewById(R.id.quizBox)
@@ -54,14 +57,17 @@ class FlashCardScreen : AppCompatActivity() {
         displayQuestion()
 
         trueButton.setOnClickListener {
+            Log.d("FlashCardScreen", "trueButton clicked")
             handleAnswer(true)
         }
 
         falseButton.setOnClickListener {
+            Log.d("FlashCardScreen", "falseButton clicked")
             handleAnswer(false)
         }
 
         nextButton.setOnClickListener {
+            Log.d("FlashCardScreen", "nextButton clicked")
 
             // Moving to the next question while increasing the index
             currentIndex++

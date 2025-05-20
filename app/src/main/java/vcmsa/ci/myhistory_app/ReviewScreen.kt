@@ -3,8 +3,10 @@ package vcmsa.ci.myhistory_app
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
 
-class ReviewActivity : AppCompatActivity() {
+
+class ReviewScreen : AppCompatActivity() {
 
     // declaring again the array of questions and its corresponding answers but this time it's for a review after giving
     //the feedback to the usr so that he can improve
@@ -28,7 +30,7 @@ class ReviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reviewscreen)
 
-        val reviewText = findViewById<TextView>(R.id.reviewQuiz)
+        val reviewQuiz = findViewById<TextView>(R.id.reviewQuiz)
 
         val builder = StringBuilder()
         for (i in questions.indices) {
@@ -36,7 +38,7 @@ class ReviewActivity : AppCompatActivity() {
             builder.append("Answer: ${answers[i]}\n\n")
         }
 
-        reviewText.text = builder.toString()
+        reviewQuiz.text = builder.toString()
     }
 }
 // OpenAI (2025) ChatGPT (May 2025 version).
