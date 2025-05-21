@@ -56,27 +56,24 @@ class FlashCardScreen : AppCompatActivity() {
         // Integration of an if statement through the questions
         displayQuestion()
 
-        trueButton.setOnClickListener {
-            Log.d("FlashCardScreen", "trueButton clicked")
-            handleAnswer(true)
-        }
-
-        falseButton.setOnClickListener {
-            Log.d("FlashCardScreen", "falseButton clicked")
-            handleAnswer(false)
-        }
+        trueButton.setOnClickListener { checkAnswer(true) }
+        falseButton.setOnClickListener { checkAnswer(false) }
 
         nextButton.setOnClickListener {
-            Log.d("FlashCardScreen", "nextButton clicked")
-
-            // Moving to the next question while increasing the index
             currentIndex++
 
-            if (currentIndex < quiz.size) {
+            // Use a WHILE loop to iterate through remaining questions logically
+            while (currentIndex < quiz.size) {
                 displayQuestion()
-                resetButtons()
-            } else {
-                // The end of the If statement and moving to the final screen
+                answered = false
+                nextButton.isEnabled = false
+                trueButton.isEnabled = true
+                falseButton.isEnabled = true
+                break  // Exit after loading the next question (waits for user)
+            }
+
+            // When finished, go to score screen
+            if (currentIndex >= quiz.size) {
                 val intent = Intent(this, ScoreScreen::class.java)
                 intent.putExtra("score", score)
                 intent.putExtra("total", quiz.size)
@@ -85,38 +82,27 @@ class FlashCardScreen : AppCompatActivity() {
             }
         }
     }
-    // OpenAI (2025) ChatGPT (May 2025 version).
-    // Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025).
 
     private fun displayQuestion() {
-        questionBox.text = "Q${currentIndex + 1}: ${quiz[currentIndex]}"
+        questionBox.text = quiz[currentIndex]
     }
 
-    private fun handleAnswer(userAnswer: Boolean) {
+    private fun checkAnswer(userAnswer: Boolean) {
         if (answered) return
-
         answered = true
 
         val correctAnswer = answers[currentIndex]
         if (userAnswer == correctAnswer) {
             score++
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "This is Correct!", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "This is Incorrect!", Toast.LENGTH_SHORT).show()
         }
 
         trueButton.isEnabled = false
         falseButton.isEnabled = false
         nextButton.isEnabled = true
     }
-
-    //Integrating a rest Button which allows the user to restart  the quiz
-    private fun resetButtons() {
-        answered = false
-        trueButton.isEnabled = true
-        falseButton.isEnabled = true
-        nextButton.isEnabled = false
-    }
 }
 // OpenAI (2025) ChatGPT (May 2025 version).
-// Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 19 May 2025).
+// Available at: https://chatgpt.com/c/682a490b-7d5c-8004-bc3f-f552d25bad94/ (Accessed: 21 May 2025).
